@@ -6,6 +6,7 @@ const ip = require('ip');
 const app = express();
 app.use(session({  // 2
   secret: 'keyboard cat',  // 암호화
+  cookie: {maxAge: 1000 * 10},
   resave: false,
   saveUninitialized: true,
   store: new FileStore()
